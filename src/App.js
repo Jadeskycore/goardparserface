@@ -15,6 +15,9 @@ class App extends Component {
     }
     handler(data) {
         this.setState({
+            webms: []
+        });
+        this.setState({
             webms: data.files
         });
     }
