@@ -43,6 +43,7 @@ class Webm extends React.Component {
                     width="50%"
                     height="50%"
                     loop="loop"
+                    autoPlay
                 >
                     <source
                         type="video/webm"
