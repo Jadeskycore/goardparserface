@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ChanForm } from './components/ChanForm';
+import { WebmTile } from './components/WebmTile';
 import './App.css';
 
 class App extends Component {
@@ -31,7 +32,10 @@ class App extends Component {
                     {
                         this.state.webms.map((listValue, inx) => {
                             return (
-                                <div key={inx}><img src={'https://2ch.hk/' + listValue.thumbnail} alt="stuff"/></div>
+                                <WebmTile
+                                    key={inx}
+                                    webmObj={listValue}
+                                />
                             )
                         })
                     }
