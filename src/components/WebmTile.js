@@ -19,11 +19,7 @@ export class WebmTile extends React.Component {
             webm = null
         }
         return (
-            <div
-                // style={{
-                //     display: "inline-block",
-                // }}
-            >
+            <div>
                 <img
                     onClick={this.handleChange}
                     src={'https://2ch.hk/' + this.props.webmObj.thumbnail} alt="stuff"
