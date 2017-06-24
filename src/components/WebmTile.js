@@ -19,10 +19,15 @@ export class WebmTile extends React.Component {
             webm = null
         }
         return (
-            <div>
-                <div onClick={this.handleChange}>
-                    <img src={'https://2ch.hk/' + this.props.webmObj.thumbnail} alt="stuff"/>
-                </div>
+            <div
+                // style={{
+                //     display: "inline-block",
+                // }}
+            >
+                <img
+                    onClick={this.handleChange}
+                    src={'https://2ch.hk/' + this.props.webmObj.thumbnail} alt="stuff"
+                />
                 {webm}
             </div>
         )
@@ -37,6 +42,7 @@ class Webm extends React.Component {
                     controls="controls"
                     width="50%"
                     height="50%"
+                    loop="loop"
                 >
                     <source
                         type="video/webm"
