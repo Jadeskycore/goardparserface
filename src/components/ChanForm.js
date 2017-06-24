@@ -44,7 +44,20 @@ export class ChanForm extends React.Component {
                     />
 
                 </label>
-                <input type="submit" value="Submit" />
+                <input
+                    type="submit"
+                    value="Submit"
+                    style={{
+                        background: '#222',
+                        color: 'white',
+                        borderStyle: 'outset',
+                        borderColor: '#FBF5F5',
+                        height: '40',
+                        width: '100',
+                        font: 'bold 15px arial sans-serif',
+                        marginLeft: '40'
+                    }}
+                />
             </form>
         );
     }
