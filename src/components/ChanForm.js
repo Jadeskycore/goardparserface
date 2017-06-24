@@ -40,7 +40,17 @@ export class ChanForm extends React.Component {
                         type="text"
                         value={this.state.value}
                         onChange={this.handleChange}
-                        style={{ width: '400', height: '20', fontSize: '20'}}
+                        style={{
+                            width: '400',
+                            height: '20',
+                            fontSize: '20',
+                            marginLeft: '20',
+                            padding: '10',
+                            border: 'solid 1px #707070',
+                            borderBottom: 'solid 2px #c9c9c9',
+                            transition: 'box-shadow 0.3s, border 0.3s',
+                            boxShadow: '0 0 5px 1px #969696',
+                        }}
                     />
 
                 </label>
@@ -48,10 +58,10 @@ export class ChanForm extends React.Component {
                     type="submit"
                     value="Submit"
                     style={{
-                        background: '#222',
+                        background: '#333333',
                         color: 'white',
                         borderStyle: 'outset',
-                        borderColor: '#FBF5F5',
+                        borderColor: '#54989F',
                         height: '40',
                         width: '100',
                         font: 'bold 15px arial sans-serif',
