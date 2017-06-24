@@ -15,7 +15,6 @@ class App extends Component {
     handler(data) {
         this.setState({
             webms: data.files
-
         });
     }
     render() {
@@ -31,7 +30,7 @@ class App extends Component {
                     {
                         this.state.webms.map((listValue, inx) => {
                             return (
-                                <div key={inx}>{ listValue.name }</div>
+                                <div key={inx}><img src={'https://2ch.hk/' + listValue.thumbnail} alt="stuff"/></div>
                             )
                         })
                     }

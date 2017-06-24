@@ -14,7 +14,7 @@ export class ChanForm extends React.Component {
     }
 
     handleSubmit(event) {
-        fetch('https://goardparser.herokuapp.com/parse_data', {
+        fetch(process.env.REACT_APP_API_URL, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -35,7 +35,7 @@ export class ChanForm extends React.Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <label>
-                    Name:
+                    Thread URL:
                     <input
                         type="text"
                         value={this.state.value}
