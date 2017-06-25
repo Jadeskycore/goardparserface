@@ -22,7 +22,7 @@ export class WebmTile extends React.Component {
             <div>
                 <img
                     onClick={this.handleChange}
-                    src={'https://2ch.hk/' + this.props.webmObj.thumbnail} alt="stuff"
+                    src={this.props.webmObj.thumbnail} alt="stuff"
                 />
                 {webm}
             </div>
@@ -43,7 +43,7 @@ class Webm extends React.Component {
                 >
                     <source
                         type="video/webm"
-                        src={"https://2ch.hk/" + this.props.webmObj.path}
+                        src={this.props.webmObj.path}
                     >
 
                     </source>
