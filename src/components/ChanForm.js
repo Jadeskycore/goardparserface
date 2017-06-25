@@ -35,39 +35,19 @@ export class ChanForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
+                <label for="formInput">
                     Thread URL:
-                    <input
-                        type="text"
-                        value={this.state.value}
-                        onChange={this.handleChange}
-                        style={{
-                            width: '400',
-                            height: '20',
-                            fontSize: '20',
-                            marginLeft: '20',
-                            padding: '10',
-                            border: 'solid 1px #707070',
-                            borderBottom: 'solid 2px #c9c9c9',
-                            transition: 'box-shadow 0.3s, border 0.3s',
-                            boxShadow: '0 0 5px 1px #969696',
-                        }}
-                    />
-
                 </label>
                 <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                    id="formInput"
+                />
+                <input
                     type="submit"
-                    value="Submit"
-                    style={{
-                        background: '#333333',
-                        color: 'white',
-                        borderStyle: 'outset',
-                        borderColor: '#54989F',
-                        height: '40',
-                        width: '100',
-                        font: 'bold 15px arial sans-serif',
-                        marginLeft: '40'
-                    }}
+                    value="Send"
+                    id="formButton"
                 />
             </form>
         );

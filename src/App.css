@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #0E132F;
 }
 
 /*.App-logo {*/
@@ -8,11 +9,10 @@
 /*}*/
 
 .App-header {
-  background-color: #333333;
-  height: 40px;
-  padding: 80px;
-  color: white;
-  /*margin-bottom: 40px;*/
+  color: #8388a1;
+  width: 100%;
+  height: 130px;
+  padding: 50px 0;
 }
 
 .App-intro {
@@ -29,14 +29,91 @@
   display: grid;
   grid-template-columns: 470px 470px 470px;
   grid-gap: 10px;
-  background-color: #333333;
-  color: #444;
+  background-color: #0E132F;
+  color: #8388A1;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
+  background-color: #34384E;
+  color: #8388A1;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
+  position: relative;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.box:hover .image {
+  opacity: 0.3;
+}
+
+.box:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #0E132F;
+  color: #797FA1;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+
+#formInput {
+  height: 25px;
+  width: 20%;
+  margin-left: 10px;
+  background-color: #797FA1;
+  color: #0E132F;
+  font-weight: 900;
+  caret-color: #0E132F;
+}
+
+#formInput::-webkit-input-placeholder {
+  color: #0E132F;
+}
+
+#formInput:focus {
+  color: #0E132F;
+}
+
+#formButton {
+  margin-left: 15px;
+  width: 5%;
+  height: 35px;
+  color: #8388A1;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: #2B2D38;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+  box-sizing: border-box;
+  transition: all 500ms ease;
+}
+
+#formButton:hover {
+  background: rgba(0,0,0,0);
+  color: #797FA1;
+  box-shadow: inset 0 0 0 3px #797FA1;
 }
