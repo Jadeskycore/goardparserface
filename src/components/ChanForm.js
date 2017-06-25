@@ -14,20 +14,21 @@ export class ChanForm extends React.Component {
     }
 
     handleSubmit(event) {
-        fetch(process.env.REACT_APP_API_URL, {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                thread_link: this.state.value,
+        if (this.state.value) {
+            fetch(process.env.REACT_APP_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    thread_link: this.state.value,
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => this.props.handler(data))
-        .catch(error => console.log(error));
-
+            .then(response => response.json())
+            .then(data => this.props.handler(data))
+            .catch(error => console.log(error));
+        }
         event.preventDefault();
     }
 
