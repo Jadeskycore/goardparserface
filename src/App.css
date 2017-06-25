@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #0E132F;
+  background-color: #F0FFFF;
 }
 
 /*.App-logo {*/
@@ -9,7 +9,8 @@
 /*}*/
 
 .App-header {
-  color: #8388a1;
+  color: white;
+  background-color: #F0FFFF;
   width: 100%;
   height: 130px;
   padding: 50px 0;
@@ -29,15 +30,15 @@
   display: grid;
   grid-template-columns: 470px 470px 470px;
   grid-gap: 10px;
-  background-color: #0E132F;
-  color: #8388A1;
+  background-color: #F0FFFF;
+  color: #444;
   width: 75%;
   margin: 0 auto;
 }
 
 .box {
-  background-color: #34384E;
-  color: #8388A1;
+  background-color: #FFEBCD;
+  color: #fff;
   border-radius: 5px;
   padding: 20px;
   font-size: 150%;
@@ -72,7 +73,7 @@
 }
 
 .text {
-  background-color: #0E132F;
+  background-color: #F5F5DC;
   color: #797FA1;
   font-size: 16px;
   padding: 16px 32px;
@@ -82,10 +83,9 @@
   height: 25px;
   width: 20%;
   margin-left: 10px;
-  background-color: #797FA1;
+  background-color: #F5F5DC;
   color: #0E132F;
   font-weight: 900;
-  caret-color: #0E132F;
 }
 
 #formInput::-webkit-input-placeholder {
@@ -93,7 +93,7 @@
 }
 
 #formInput:focus {
-  color: #0E132F;
+  color: #F5F5DC;
 }
 
 #formButton {
@@ -103,7 +103,7 @@
   color: #8388A1;
   font-size: 15px;
   font-weight: 700;
-  background-color: #2B2D38;
+  background-color: #F5F5DC;
   border: none;
   padding: 10px;
   border-radius: 5px;
@@ -113,7 +113,7 @@
 }
 
 #formButton:hover {
-  background: rgba(0,0,0,0);
-  color: #797FA1;
-  box-shadow: inset 0 0 0 3px #797FA1;
+  /*background: rgba(0,0,0,0);*/
+  color: #F5F5DC;
+  box-shadow: inset 0 0 0 3px #DEB887;
 }
