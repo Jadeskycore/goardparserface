@@ -22,7 +22,7 @@ export class WebmTile extends React.Component {
             <div className="box">
                 <img
                     onClick={this.handleChange}
-                    src={this.props.webmObj.thumbnail} alt="stuff"
+                    src={this.props.webmObj.thumbnail}
                     className="image"
                     alt="webmImage"
                 />
