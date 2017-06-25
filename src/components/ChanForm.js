@@ -35,7 +35,7 @@ export class ChanForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label for="formInput">
+                <label htmlFor="formInput">
                     Thread URL:
                 </label>
                 <input

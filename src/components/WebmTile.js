@@ -12,23 +12,18 @@ export class WebmTile extends React.Component {
     }
     render() {
         let webm = null;
+        let thumbnail = null;
 
         if (this.state.webmShow) {
-            webm = <Webm webmObj={this.props.webmObj}/>
+            webm = <Webm webmObj={this.props.webmObj} handler={this.handleChange}/>;
+            thumbnail = null;
         } else {
-            webm = null
+            webm = null;
+            thumbnail = <Thumbnail webmObj={this.props.webmObj} handler={this.handleChange}/>;
         }
         return (
             <div className="box">
-                <img
-                    onClick={this.handleChange}
-                    src={this.props.webmObj.thumbnail}
-                    className="image"
-                    alt="webmImage"
-                />
-                <div className="middle">
-                    <div className="text">Play</div>
-                </div>
+                {thumbnail}
                 {webm}
             </div>
         )
@@ -39,10 +34,12 @@ class Webm extends React.Component {
     render() {
         return(
             <div>
-                <video className="videoChan"
+                <video
+                    className="videoChan"
                     controls="controls"
                     loop="loop"
                     autoPlay
+                    onClick={this.props.handler}
                 >
                     <source
                         type="video/webm"
@@ -52,6 +49,24 @@ class Webm extends React.Component {
                     </source>
                 </video>
             </div>
+        )
+    }
+}
+
+class Thumbnail extends React.Component {
+    render() {
+        return(
+        <div>
+            <img
+                onClick={this.props.handler}
+                src={this.props.webmObj.thumbnail}
+                className="image"
+                alt="webmImage"
+            />
+            <div className="middle">
+                <div className="text">Play</div>
+            </div>
+        </div>
         )
     }
 }
