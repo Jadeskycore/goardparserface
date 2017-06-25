@@ -31,7 +31,7 @@ class App extends Component {
                         <ChanForm handler={ this.handler }/>
                     </div>
                 </div>
-                <div>
+                <div className="wrapper">
                     {
                         this.state.webms.map((listValue, inx) => {
                             return (

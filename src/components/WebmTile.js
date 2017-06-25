@@ -19,7 +19,7 @@ export class WebmTile extends React.Component {
             webm = null
         }
         return (
-            <div>
+            <div className="box">
                 <img
                     onClick={this.handleChange}
                     src={this.props.webmObj.thumbnail} alt="stuff"
@@ -34,10 +34,8 @@ class Webm extends React.Component {
     render() {
         return(
             <div>
-                <video
+                <video className="videoChan"
                     controls="controls"
-                    width="50%"
-                    height="50%"
                     loop="loop"
                     autoPlay
                 >
