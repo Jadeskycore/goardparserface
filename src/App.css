@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #F0FFFF;
+  background-color: #FFFAF0;
 }
 
 /*.App-logo {*/
@@ -9,8 +9,8 @@
 /*}*/
 
 .App-header {
-  color: white;
-  background-color: #F0FFFF;
+  color: #FF6600;
+  background-color: #FFFAF0;
   width: 100%;
   height: 130px;
   padding: 50px 0;
@@ -82,6 +82,8 @@
 #formInput {
   height: 25px;
   width: 20%;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
   margin-left: 10px;
   background-color: #F5F5DC;
   color: #0E132F;
@@ -90,10 +92,6 @@
 
 #formInput::-webkit-input-placeholder {
   color: #0E132F;
-}
-
-#formInput:focus {
-  color: #F5F5DC;
 }
 
 #formButton {
