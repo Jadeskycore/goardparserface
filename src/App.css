@@ -9,11 +9,10 @@
 /*}*/
 
 .App-header {
-  background-color: #0E132F;
-  height: 40px;
-  padding: 80px;
-  color: #8388A1;
+  color: #8388a1;
   width: 100%;
+  height: 130px;
+  padding: 50px 0;
 }
 
 .App-intro {
