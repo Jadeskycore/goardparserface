@@ -14,6 +14,7 @@ export class ChanForm extends React.Component {
     }
 
     handleSubmit(event) {
+        const componentCntx = this;
         if (this.state.value) {
             fetch(process.env.REACT_APP_API_URL, {
                 method: 'POST',
@@ -25,9 +26,9 @@ export class ChanForm extends React.Component {
                     thread_link: this.state.value,
                 })
             })
-            .then(response => response.json())
-            .then(data => this.props.handler(data))
-            .catch(error => console.log(error));
+                .then(handleErrors)
+                .then(data => componentCntx.props.handler(data))
+                .catch(error => componentCntx.props.errorHandler(error) && console.log(error.message));
         }
         event.preventDefault();
     }
@@ -52,4 +53,11 @@ export class ChanForm extends React.Component {
             </form>
         );
     }
+}
+
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response.json();
 }

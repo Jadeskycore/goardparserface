@@ -8,17 +8,23 @@ class App extends Component {
         super(props);
 
         this.state = {
-            webms: []
+            webms: [],
+            error: null
         };
 
-        this.handler = this.handler.bind(this)
+        this.handler = this.handler.bind(this);
+        this.ErrorH = this.ErrorH.bind(this)
     }
     handler(data) {
         this.setState({
-            webms: []
-        });
-        this.setState({
             webms: data.files
+        });
+    }
+
+    ErrorH(error) {
+        this.setState({
+            webms: [],
+            error: error,
         });
     }
 
@@ -28,12 +34,12 @@ class App extends Component {
                 <div className="App-header">
                     <h2>Board Parser pre-alpha</h2>
                     <div>
-                        <ChanForm handler={ this.handler }/>
+                        <ChanForm handler={ this.handler } errorHandler={ this.ErrorH }/>
                     </div>
                 </div>
                 <div className="wrapper">
                     {
-                        this.state.webms.map((listValue, inx) => {
+                        this.state.webms && this.state.webms.map((listValue, inx) => {
                             return (
                                 <WebmTile
                                     key={inx}
