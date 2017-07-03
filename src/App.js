@@ -9,11 +9,13 @@ class App extends Component {
 
         this.state = {
             webms: [],
+            webmForDownload: [],
             error: null
         };
 
         this.handler = this.handler.bind(this);
         this.ErrorH = this.ErrorH.bind(this)
+        this.AssignForDownloading = this.AssignForDownloading.bind(this)
     }
     handler(data) {
         this.setState({
@@ -26,6 +28,15 @@ class App extends Component {
             webms: [],
             error: error,
         });
+    }
+
+    AssignForDownloading(webm) {
+        const newWebmArray = this.state.webmForDownload.slice();
+        newWebmArray.push(webm);
+
+        this.setState({
+            webmForDownload: newWebmArray
+        })
     }
 
     render() {
@@ -44,6 +55,7 @@ class App extends Component {
                                 <WebmTile
                                     key={inx}
                                     webmObj={listValue}
+                                    AssignForDownloading={ this.AssignForDownloading }
                                 />
                             )
                         })

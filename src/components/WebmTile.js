@@ -15,16 +15,20 @@ export class WebmTile extends React.Component {
         let thumbnail = null;
 
         if (this.state.webmShow) {
-            webm = <Webm webmObj={this.props.webmObj} handler={this.handleChange}/>;
+            webm = <Webm webmObj={ this.props.webmObj } handler={ this.handleChange }/>;
             thumbnail = null;
         } else {
             webm = null;
-            thumbnail = <Thumbnail webmObj={this.props.webmObj} handler={this.handleChange}/>;
+            thumbnail = <Thumbnail webmObj={ this.props.webmObj } handler={ this.handleChange }/>;
         }
         return (
             <div className="box">
                 {thumbnail}
                 {webm}
+                <WebmButton
+                    webmObj={ this.props.webmObj }
+                    AssignForDownloading={ this.props.AssignForDownloading }
+                />
             </div>
         )
     }
@@ -67,6 +71,19 @@ class Thumbnail extends React.Component {
                 <div className="text">Play</div>
             </div>
         </div>
+        )
+    }
+}
+
+class WebmButton extends React.Component {
+    render() {
+        return (
+            <button
+                onClick={ this.props.AssignForDownloading.bind(this, this.props.webmObj) }
+            >
+                Click to download
+            </button>
+
         )
     }
 }
