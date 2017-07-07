@@ -80,6 +80,7 @@ class WebmButton extends React.Component {
         return (
             <button
                 onClick={ this.props.AssignForDownloading.bind(this, this.props.webmObj) }
+                id="downloadButton"
             >
                 Click to download
             </button>

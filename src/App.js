@@ -36,10 +36,15 @@ class App extends Component {
         let item = newWebmArray.find(item => item.name === webm.name);
 
         if (!item){
+
+            if (newWebmArray.length >= 10) {
+                return
+            }
             newWebmArray.push(webm);
             this.setState({
                 webmForDownload: newWebmArray
             })
+
         } else {
             this.setState({
                 webmForDownload: newWebmArray.filter((obj) => {
