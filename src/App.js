@@ -14,7 +14,7 @@ class App extends Component {
         };
 
         this.handler = this.handler.bind(this);
-        this.ErrorH = this.ErrorH.bind(this)
+        this.ErrorH = this.ErrorH.bind(this);
         this.AssignForDownloading = this.AssignForDownloading.bind(this)
     }
     handler(data) {
@@ -32,11 +32,22 @@ class App extends Component {
 
     AssignForDownloading(webm) {
         const newWebmArray = this.state.webmForDownload.slice();
-        newWebmArray.push(webm);
 
-        this.setState({
-            webmForDownload: newWebmArray
-        })
+        let item = newWebmArray.find(item => item.name === webm.name);
+
+        if (!item){
+            newWebmArray.push(webm);
+            this.setState({
+                webmForDownload: newWebmArray
+            })
+        } else {
+            this.setState({
+                webmForDownload: newWebmArray.filter((obj) => {
+                    return obj.name !== webm.name
+                })
+            })
+        }
+
     }
 
     render() {
